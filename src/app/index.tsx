@@ -1,5 +1,4 @@
 import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 
 const polls = [1, 2, 3];
@@ -17,7 +16,6 @@ const App = () => {
       />
       <FlatList
         contentContainerStyle={styles.container}
-        style={{ backgroundColor: 'gainsboro' }}
         data={polls}
         renderItem={() => (
           <View style={styles.pollContainer}>
