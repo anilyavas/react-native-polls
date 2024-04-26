@@ -1,7 +1,7 @@
 import { Stack } from 'expo-router';
 import { Text, StyleSheet, FlatList, Alert } from 'react-native';
 import { Link } from 'expo-router';
-import { Entypo } from '@expo/vector-icons';
+import { Entypo, AntDesign } from '@expo/vector-icons';
 import { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabase';
 
@@ -34,6 +34,11 @@ const App = () => {
           headerRight: () => (
             <Link href={'/polls/new'} asChild>
               <Entypo name='squared-plus' color='white' size={20} />
+            </Link>
+          ),
+          headerLeft: () => (
+            <Link href={'/login'}>
+              <AntDesign name='user' color='white' size={20} />
             </Link>
           ),
         }}
