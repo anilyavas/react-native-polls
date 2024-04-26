@@ -1,11 +1,28 @@
 import { Stack } from 'expo-router';
-import { Text, StyleSheet, FlatList } from 'react-native';
+import { Text, StyleSheet, FlatList, Alert } from 'react-native';
 import { Link } from 'expo-router';
 import { Entypo } from '@expo/vector-icons';
+import { useEffect, useState } from 'react';
+import { supabase } from '../lib/supabase';
 
-const polls = [{ id: 1 }, { id: 2 }, { id: 3 }];
+// const polls = [{ id: 1 }, { id: 2 }, { id: 3 }];
 
 const App = () => {
+  const [polls, setPolls] = useState([]);
+
+  useEffect(() => {
+    const fetchPolls = async () => {
+      console.log('fetching');
+
+      let { data, error } = await supabase.from('polls').select('*');
+      if (error) {
+        Alert.alert('Error fetching data');
+      }
+      setPolls(data);
+    };
+    fetchPolls();
+  }, []);
+
   return (
     <>
       <Stack.Screen
