@@ -1,6 +1,7 @@
 import { Stack } from 'expo-router';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { Text, StyleSheet, FlatList } from 'react-native';
 import { Link } from 'expo-router';
+import { Entypo } from '@expo/vector-icons';
 
 const polls = [{ id: 1 }, { id: 2 }, { id: 3 }];
 
@@ -13,6 +14,11 @@ const App = () => {
           headerStyle: { backgroundColor: '#f4511e' },
           headerTintColor: 'white',
           headerTitleStyle: { fontWeight: 'bold' },
+          headerRight: () => (
+            <Link href={'/polls/new'} asChild>
+              <Entypo name='squared-plus' color='white' size={20} />
+            </Link>
+          ),
         }}
       />
       <FlatList

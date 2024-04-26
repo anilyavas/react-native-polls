@@ -18,7 +18,14 @@ const PollDetails = () => {
 
   return (
     <View style={styles.container}>
-      <Stack.Screen options={{ title: 'Poll' }} />
+      <Stack.Screen
+        options={{
+          title: 'Poll',
+          headerStyle: { backgroundColor: '#f4511e' },
+          headerTintColor: 'white',
+          headerTitleStyle: { fontWeight: 'bold' },
+        }}
+      />
       <Text style={styles.question}>{poll.question}</Text>
       <View style={{ gap: 5 }}>
         {poll.options.map((option) => (
