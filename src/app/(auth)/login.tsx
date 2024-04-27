@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Alert, StyleSheet, View, Button, TextInput, Text } from 'react-native';
 import { supabase } from '../../lib/supabase';
+import { Stack } from 'expo-router';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -36,6 +37,7 @@ export default function Login() {
 
   return (
     <View style={styles.container}>
+      <Stack.Screen options={{ title: 'Login' }} />
       <Text style={styles.title}>Sign in or Create an account</Text>
       <View style={[styles.verticallySpaced, styles.mt20]}>
         <TextInput
