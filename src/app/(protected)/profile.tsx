@@ -1,9 +1,10 @@
 import { View, Text, StyleSheet, Button } from 'react-native';
-import { useAuth } from '../providers/AuthProvider';
-import { supabase } from '../lib/supabase';
+import { useAuth } from '../../providers/AuthProvider';
+import { supabase } from '../../lib/supabase';
 
 const ProfileScreen = () => {
   const { user } = useAuth();
+
   return (
     <View style={styles.container}>
       <Text>User id: {user?.id}</Text>
