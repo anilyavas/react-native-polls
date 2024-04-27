@@ -37,7 +37,7 @@ const App = () => {
             </Link>
           ),
           headerLeft: () => (
-            <Link href={'/login'}>
+            <Link href={'/profile'}>
               <AntDesign name='user' color='white' size={20} />
             </Link>
           ),
