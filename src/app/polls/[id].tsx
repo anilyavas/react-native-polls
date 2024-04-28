@@ -60,7 +60,7 @@ const PollDetails = () => {
     const newVote = {
       option: selectedVariable,
       poll_id: poll.id,
-      user_id: user.id,
+      user_id: user?.id,
     };
     if (userVote) {
       newVote.id = userVote.id;
