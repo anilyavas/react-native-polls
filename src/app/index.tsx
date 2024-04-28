@@ -4,11 +4,10 @@ import { Link } from 'expo-router';
 import { Entypo, AntDesign } from '@expo/vector-icons';
 import { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabase';
-
-// const polls = [{ id: 1 }, { id: 2 }, { id: 3 }];
+import { Poll } from '../types/db';
 
 const App = () => {
-  const [polls, setPolls] = useState([]);
+  const [polls, setPolls] = useState<Poll[]>([]);
 
   useEffect(() => {
     const fetchPolls = async () => {
@@ -48,9 +47,7 @@ const App = () => {
         data={polls}
         renderItem={({ item }) => (
           <Link href={`/polls/${item.id}`} style={styles.pollContainer}>
-            <Text style={styles.pollTitle}>
-              {item.id} Example poll question
-            </Text>
+            <Text style={styles.pollTitle}>{item.question}</Text>
           </Link>
         )}
       />
